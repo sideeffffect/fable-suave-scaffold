@@ -5,13 +5,11 @@ dist: trusty
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
+    - sourceline: 'deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ trusty main'
+      key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x417A0893'
     packages:
-      - libstdc++-4.9-dev
-      - libunwind8-dev
+      - dotnet-dev-1.0.1
 
-before_install:
-  - chmod +x build.sh
- 
 script: 
   - ./build.sh All
+
